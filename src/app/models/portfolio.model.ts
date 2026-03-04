@@ -66,6 +66,13 @@ export interface Education {
   highlight: boolean;
 }
 
+export interface Service {
+  title: string;
+  description: string;
+  icon: string;
+  tech: string[];
+}
+
 export interface NavLink {
   label: string;
   href: string;

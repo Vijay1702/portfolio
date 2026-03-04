@@ -1,0 +1,49 @@
+<div class="ai-assistant-container" [class.open]="isOpen">
+  <!-- Chat Window -->
+  <div class="chat-window" *ngIf="isOpen">
+    <div class="chat-header">
+      <div class="header-info">
+        <span class="status-dot"></span>
+        <h3>AI Portfolio Assistant</h3>
+      </div>
+      <button class="close-btn" (click)="toggleChat()">×</button>
+    </div>
+
+    <div class="chat-messages">
+      <div *ngFor="let msg of messages" [class]="'message ' + msg.role">
+        <div class="message-content">
+          {{ msg.content }}
+        </div>
+      </div>
+    </div>
+
+    <div class="chat-input-area">
+      <input
+        type="text"
+        [(ngModel)]="userInput"
+        (keyup.enter)="sendMessage()"
+        placeholder="Ask me anything about Vijay..."
+      />
+      <button (click)="sendMessage()" class="send-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" />
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Floating Button -->
+  <button
+    class="fab"
+    (click)="toggleChat()"
+    [class.active]="isOpen"
+    aria-label="Toggle AI Assistant"
+  >
+    <div class="fab-icon">
+      <svg *ngIf="!isOpen" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+      </svg>
+      <span *ngIf="isOpen">×</span>
+    </div>
+  </button>
+</div>

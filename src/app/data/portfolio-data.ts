@@ -6,6 +6,7 @@ import {
   Certification,
   Education,
   NavLink,
+  Service,
 } from '../models/portfolio.model';
 
 export const personalInfo: PersonalInfo = {
@@ -256,6 +257,30 @@ export const projects: Project[] = [
     github: '#',
     demo: null,
     highlight: true,
+  },
+];
+
+export const services: Service[] = [
+  {
+    title: 'Full-Stack Web Development',
+    description:
+      'Building scalable, high-performance web applications with modern architectures. Specializing in the MERN stack and Angular ecosystem.',
+    icon: '💻',
+    tech: ['Angular', 'Node.js', 'MongoDB', 'PostgreSQL'],
+  },
+  {
+    title: 'AI & Machine Learning Integration',
+    description:
+      'Implementing intelligent features into applications, from predictive analytics and NLP to custom computer vision models.',
+    icon: '🤖',
+    tech: ['Python', 'TensorFlow', 'Scikit-learn', 'NLP'],
+  },
+  {
+    title: 'UI/UX Design & Prototyping',
+    description:
+      'Crafting high-fidelity, user-centric designs in Figma and translating them into pixel-perfect, responsive code.',
+    icon: '🎨',
+    tech: ['Figma', 'Responsive Design', 'Motion UI', 'CSS/SCSS'],
   },
 ];
 

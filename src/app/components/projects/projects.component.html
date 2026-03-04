@@ -28,6 +28,7 @@
         class="proj-card card fade-up"
         [class.highlighted]="proj.highlight"
         [style.animation-delay]="i * 0.05 + 's'"
+        (click)="openProject(proj)"
       >
         <div *ngIf="proj.highlight" class="proj-highlight-bar"></div>
 
@@ -71,6 +72,70 @@
             >
               <ng-icon name="featherExternalLink"></ng-icon>
             </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Project Detail Modal -->
+  <div class="modal-overlay" *ngIf="selectedProject() as project" (click)="closeProject()">
+    <div class="modal-content" (click)="$event.stopPropagation()">
+      <button class="modal-close" (click)="closeProject()">
+        <ng-icon name="featherX"></ng-icon>
+      </button>
+
+      <div class="modal-grid">
+        <div class="modal-visual">
+          <div class="modal-emoji-bg">{{ project.emoji }}</div>
+          <div class="modal-links">
+            <a
+              *ngIf="project.github"
+              [href]="project.github"
+              target="_blank"
+              class="btn btn-primary"
+              appMagnetic
+            >
+              <ng-icon name="featherGithub"></ng-icon> GitHub Code
+            </a>
+            <a
+              *ngIf="project.demo"
+              [href]="project.demo"
+              target="_blank"
+              class="btn btn-outline"
+              appMagnetic
+            >
+              <ng-icon name="featherExternalLink"></ng-icon> Live Demo
+            </a>
+          </div>
+        </div>
+
+        <div class="modal-details">
+          <div class="modal-header">
+            <span class="tag">{{ project.categoryLabel }}</span>
+            <h2 class="modal-title font-heading">{{ project.title }}</h2>
+          </div>
+
+          <div class="modal-section">
+            <h4 class="section-label">Overview</h4>
+            <p class="section-text">{{ project.description }}</p>
+          </div>
+
+          <div class="modal-section">
+            <h4 class="section-label">Key Features & Technical Implementation</h4>
+            <ul class="modal-bullets-list">
+              <li *ngFor="let bullet of project.bullets">
+                <ng-icon name="featherArrowRight" class="bullet-icon"></ng-icon>
+                {{ bullet }}
+              </li>
+            </ul>
+          </div>
+
+          <div class="modal-section">
+            <h4 class="section-label">Technologies Used</h4>
+            <div class="modal-tech-grid">
+              <span *ngFor="let t of project.tech" class="tech-pill">{{ t }}</span>
+            </div>
           </div>
         </div>
       </div>
