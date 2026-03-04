@@ -8,7 +8,6 @@ const FILTERS = [
   { key: 'all', label: 'All Projects' },
   { key: 'web', label: '🌐 Web Dev' },
   { key: 'ai', label: '🤖 AI / ML' },
-  { key: 'iot', label: '📡 IoT' },
 ];
 
 @Component({
@@ -28,7 +27,7 @@ export class ProjectsComponent {
   filteredProjects = computed(() => {
     const filter = this.activeFilter();
     if (filter === 'all') return this.allProjects;
-    return this.allProjects.filter((p) => p.category === filter);
+    return this.allProjects.filter((p) => p.categories.includes(filter as any));
   });
 
   setFilter(filter: string) {
@@ -37,6 +36,6 @@ export class ProjectsComponent {
 
   getFilterCount(key: string) {
     if (key === 'all') return this.allProjects.length;
-    return this.allProjects.filter((p) => p.category === key).length;
+    return this.allProjects.filter((p) => p.categories.includes(key as any)).length;
   }
 }

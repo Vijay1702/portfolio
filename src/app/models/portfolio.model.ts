@@ -39,7 +39,7 @@ export interface Experience {
 export interface Project {
   id: number;
   title: string;
-  category: 'all' | 'web' | 'ai' | 'iot';
+  categories: ('web' | 'ai' | 'iot')[];
   categoryLabel: string;
   emoji: string;
   description: string;

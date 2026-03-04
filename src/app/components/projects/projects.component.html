@@ -4,7 +4,7 @@
       <span class="section-tag">What I've Built</span>
       <h2 class="section-title">Featured <span class="gradient-text">Projects</span></h2>
       <p class="section-subtitle">
-        10 projects spanning full-stack web development, AI/ML, and IoT engineering.
+        8 projects spanning full-stack web development and AI/ML engineering.
       </p>
     </div>
 
@@ -37,8 +37,8 @@
             <span
               class="tag"
               [ngClass]="{
-                teal: proj.category === 'ai',
-                purple: proj.category === 'iot',
+                teal: proj.categories.includes('ai'),
+                purple: proj.categories.includes('iot'),
               }"
             >
               {{ proj.categoryLabel }}

@@ -23,12 +23,12 @@ export const personalInfo: PersonalInfo = {
   bio: `I'm Vijay Ramesh, an Associate Software Engineer at Finforz Technologies with a high-performance profile 
 bridging sophisticated web engineering and intelligent AI systems. With an MTech in Information Technology 
 from the prestigious College of Engineering, Guindy (CEG) and a background in Electronics & Communication 
-Engineering (BE), I bring a unique dual-competency in software architectures and hardware intuition. 
+Engineering (BE), I bring a unique dual-competency in software architectures and system design. 
 My expertise spans building scalable Angular applications, crafting high-fidelity UI/UX prototypes, 
 and engineering multi-task deep learning models. I don't just build features. I architect intelligent 
 solutions that solve complex technical challenges and drive business impact.`,
   stats: [
-    { value: '11+', label: 'Projects Built' },
+    { value: '8+', label: 'Selected Projects' },
     { value: '8.45', label: 'CGPA (BE)' },
     { value: '8.2', label: 'CGPA (MTech)' },
     { value: '1', label: 'National Hackathon' },
@@ -63,11 +63,6 @@ export const skills: SkillGroup[] = [
     category: 'AI / Machine Learning',
     icon: '🤖',
     items: ['Deep Learning', 'CNN', 'BiLSTM', 'NLP', 'Scikit-learn', 'TensorFlow / Keras'],
-  },
-  {
-    category: 'IoT & Embedded',
-    icon: '📡',
-    items: ['Arduino', 'Sensor Integration', 'LoRa Communication', 'Circuit Design'],
   },
   {
     category: 'Tools & Practices',
@@ -113,7 +108,7 @@ export const projects: Project[] = [
   {
     id: 1,
     title: 'Workout Tutorial Platform',
-    category: 'web',
+    categories: ['web'],
     categoryLabel: 'Web Dev',
     emoji: '🏋️',
     description:
@@ -132,7 +127,7 @@ export const projects: Project[] = [
   {
     id: 2,
     title: 'Nearby Restaurant Finder',
-    category: 'web',
+    categories: ['web'],
     categoryLabel: 'Web Dev',
     emoji: '🍽️',
     description:
@@ -151,7 +146,7 @@ export const projects: Project[] = [
   {
     id: 3,
     title: 'Product & Price Comparison Tool',
-    category: 'web',
+    categories: ['web'],
     categoryLabel: 'Web Dev',
     emoji: '💰',
     description:
@@ -170,7 +165,7 @@ export const projects: Project[] = [
   {
     id: 4,
     title: 'Spam Detection System',
-    category: 'ai',
+    categories: ['ai'],
     categoryLabel: 'AI / ML',
     emoji: '📧',
     description:
@@ -189,7 +184,7 @@ export const projects: Project[] = [
   {
     id: 5,
     title: 'Fruit Classification System',
-    category: 'ai',
+    categories: ['ai'],
     categoryLabel: 'AI / ML',
     emoji: '🍎',
     description:
@@ -208,8 +203,8 @@ export const projects: Project[] = [
   {
     id: 6,
     title: 'Smart Greenhouse Farming',
-    category: 'iot',
-    categoryLabel: 'IoT',
+    categories: ['ai', 'iot'],
+    categoryLabel: 'IoT + AI',
     emoji: '🌱',
     description:
       'An IoT-based autonomous greenhouse management system that monitors environmental conditions and automatically controls irrigation and fertilization in real time.',
@@ -225,28 +220,9 @@ export const projects: Project[] = [
     highlight: true,
   },
   {
-    id: 7,
-    title: 'LPG Gas Leakage Detection',
-    category: 'iot',
-    categoryLabel: 'IoT',
-    emoji: '🔥',
-    description:
-      'A real-time IoT safety system detecting LPG gas leakage using gas sensors and triggering immediate multi-channel alerts for home and industrial environments.',
-    bullets: [
-      'Interfaced MQ-series gas sensor with microcontroller for LPG concentration detection',
-      'Programmed threshold-based alert logic triggering buzzer and LED warning systems',
-      'Designed a compact, low-cost circuit suitable for residential/industrial deployment',
-      'Tested system reliability across multiple gas concentration scenarios',
-    ],
-    tech: ['Arduino', 'MQ Gas Sensor', 'Buzzer Module', 'C++', 'Circuit Design'],
-    github: '#',
-    demo: null,
-    highlight: false,
-  },
-  {
     id: 8,
     title: 'LoRa Long Range Communication',
-    category: 'iot',
+    categories: ['iot'],
     categoryLabel: 'IoT',
     emoji: '📡',
     description:
@@ -263,44 +239,9 @@ export const projects: Project[] = [
     highlight: false,
   },
   {
-    id: 9,
-    title: 'Temperature-Based Fan Controller',
-    category: 'iot',
-    categoryLabel: 'IoT',
-    emoji: '🌡️',
-    description:
-      'An energy-efficient analog/digital circuit that automatically adjusts fan speed in proportion to ambient room temperature using PWM control.',
-    bullets: [
-      'Designed a temperature-sensing circuit using LM35 sensors',
-      'Implemented PWM-based motor speed control responding proportionally to temperature',
-      'Built and calibrated the circuit through iterative testing on breadboard',
-    ],
-    tech: ['LM35 Sensor', 'PWM Controller', 'DC Motor', 'Circuit Design'],
-    github: '#',
-    demo: null,
-    highlight: false,
-  },
-  {
-    id: 10,
-    title: 'IR-Based TV Remote Jammer',
-    category: 'iot',
-    categoryLabel: 'IoT',
-    emoji: '📺',
-    description:
-      'A compact infrared signal jamming circuit that disrupts TV remote communication — built as a hands-on electronics learning project demonstrating ECE fundamentals.',
-    bullets: [
-      'Designed an IR transmission circuit using standard remote control frequency interference',
-      'Built a compact circuit using a 555 timer IC, IR LEDs, and passive components',
-    ],
-    tech: ['IR LED', '555 Timer IC', 'Resistors/Capacitors', 'Circuit Design'],
-    github: '#',
-    demo: null,
-    highlight: false,
-  },
-  {
     id: 11,
     title: 'AI-Powered Smart Parking Application',
-    category: 'web',
+    categories: ['web'],
     categoryLabel: 'Web Dev',
     emoji: '🅿️',
     description:
@@ -378,9 +319,9 @@ export const education: Education[] = [
 
 export const navLinks: NavLink[] = [
   { label: 'About', href: '#about' },
-  { label: 'Skills', href: '#skills' },
   { label: 'Experience', href: '#experience' },
   { label: 'Projects', href: '#projects' },
+  { label: 'Skills', href: '#skills' },
   { label: 'Certifications', href: '#certifications' },
   { label: 'Contact', href: '#contact' },
 ];
