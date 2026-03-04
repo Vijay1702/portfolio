@@ -1,0 +1,75 @@
+<section class="hero" id="hero">
+  <!-- Ambient orbs -->
+  <div
+    class="hero-orb orb-blue"
+    style="width: 600px; height: 600px; top: -100px; left: -100px"
+  ></div>
+  <div
+    class="hero-orb orb-teal"
+    style="width: 500px; height: 500px; bottom: -100px; right: -100px"
+  ></div>
+  <div
+    class="hero-orb orb-purple"
+    style="width: 400px; height: 400px; top: 40%; left: 50%; transform: translate(-50%, -50%)"
+  ></div>
+
+  <div class="container hero-inner">
+    <!-- Badge -->
+    <div class="hero-badge fade-up" style="animation-delay: 0.15s">
+      <span class="badge-dot"></span>
+      {{ personalInfo.available ? 'Open to Opportunities' : 'Currently Unavailable' }}
+    </div>
+
+    <!-- Headline -->
+    <h1 class="hero-title fade-up" style="animation-delay: 0.3s">
+      Hi, I'm <span class="gradient-text">{{ personalInfo.name }}</span>
+      <br />
+      <span class="hero-role">{{ personalInfo.tagline }}</span>
+      <span class="hero-role-sep"> & </span>
+      <span class="hero-role accent-teal">{{ personalInfo.subTagline }}</span>
+    </h1>
+
+    <!-- Subheadline -->
+    <p class="hero-subtitle fade-up" style="animation-delay: 0.45s">
+      {{ personalInfo.headline }}
+    </p>
+
+    <!-- Meta tags -->
+    <div class="hero-tags fade-up" style="animation-delay: 0.6s">
+      <span class="tag teal">MTech IT @ CEG Chennai</span>
+      <span class="tag">MERN Stack</span>
+      <span class="tag">AI / ML</span>
+      <span class="tag purple">Hackathon Finalist</span>
+    </div>
+
+    <!-- CTAs -->
+    <div class="hero-cta fade-up" style="animation-delay: 0.75s">
+      <a href="#projects" class="btn btn-primary">
+        View My Work <span style="margin-left: 4px">↓</span>
+      </a>
+      <a href="#contact" class="btn btn-outline"> Let's Connect </a>
+      <a [href]="personalInfo.resumeLink" class="btn btn-ghost" download="Vijay_Ramesh_Resume.pdf">
+        Download CV
+      </a>
+    </div>
+
+    <!-- Social strip -->
+    <div class="hero-social fade-up" style="animation-delay: 0.9s">
+      <a [href]="personalInfo.linkedin" target="_blank" rel="noreferrer" class="social-link">
+        <ng-icon name="featherLinkedin"></ng-icon> LinkedIn
+      </a>
+      <span class="social-sep">·</span>
+      <a [href]="'mailto:' + personalInfo.email" class="social-link">
+        <ng-icon name="featherMail"></ng-icon> Email
+      </a>
+    </div>
+
+    <!-- Scroll hint -->
+    <a href="#about" class="scroll-hint" aria-label="Scroll to about">
+      <ng-icon name="featherArrowDown" class="scroll-icon"></ng-icon>
+    </a>
+  </div>
+
+  <!-- Animated grid lines -->
+  <div class="hero-grid" aria-hidden="true"></div>
+</section>

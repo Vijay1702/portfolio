@@ -1,0 +1,61 @@
+<nav class="navbar" [class.scrolled]="isScrolled()">
+  <div class="container nav-inner">
+    <a href="#" class="nav-logo" (click)="closeMenu()">
+      <span class="logo-accent">VR</span>.portfolio
+    </a>
+
+    <!-- Desktop Menu -->
+    <div class="nav-menu desktop-only">
+      <a *ngFor="let link of navLinks" [href]="link.href" class="nav-link" (click)="closeMenu()">
+        {{ link.label }}
+      </a>
+    </div>
+
+    <!-- Desktop Actions -->
+    <div class="nav-actions desktop-only">
+      <a [href]="personalInfo.linkedin" target="_blank" class="social-btn" aria-label="LinkedIn">
+        <ng-icon name="featherLinkedin"></ng-icon>
+      </a>
+      <a
+        [href]="personalInfo.resumeLink"
+        download="Vijay_Ramesh_Resume.pdf"
+        class="btn btn-primary btn-sm"
+      >
+        <span>Resume</span>
+        <ng-icon name="featherDownload"></ng-icon>
+      </a>
+    </div>
+
+    <!-- Mobile Toggle -->
+    <button
+      class="menu-toggle mobile-only"
+      (click)="toggleMenu()"
+      [attr.aria-label]="isMenuOpen() ? 'Close menu' : 'Open menu'"
+    >
+      <ng-icon [name]="isMenuOpen() ? 'featherX' : 'featherMenu'"></ng-icon>
+    </button>
+  </div>
+
+  <!-- Mobile Menu Overlay -->
+  <div class="mobile-menu" [class.open]="isMenuOpen()">
+    <div class="mobile-menu-links">
+      <a
+        *ngFor="let link of navLinks"
+        [href]="link.href"
+        class="mobile-nav-link"
+        (click)="closeMenu()"
+      >
+        {{ link.label }}
+      </a>
+      <div class="mobile-actions">
+        <a
+          [href]="personalInfo.resumeLink"
+          download="Vijay_Ramesh_Resume.pdf"
+          class="btn btn-primary w-full"
+        >
+          Download Resume
+        </a>
+      </div>
+    </div>
+  </div>
+</nav>

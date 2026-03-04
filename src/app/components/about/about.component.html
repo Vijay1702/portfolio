@@ -1,0 +1,42 @@
+<section id="about" class="about">
+  <div class="container">
+    <div class="grid-2 about-wrapper">
+      <!-- Left: Photo/Bio -->
+      <div class="about-content fade-up" style="animation-delay: 0.1s">
+        <span class="section-tag">About Me</span>
+        <h2 class="section-title">
+          Bridging the gap between <span class="gradient-text">Hardware & Software</span>
+        </h2>
+
+        <p class="about-bio" [innerHTML]="personalInfo.bio"></p>
+
+        <div class="stats-grid">
+          <div *ngFor="let stat of personalInfo.stats" class="stat-card">
+            <span class="stat-value">{{ stat.value }}</span>
+            <span class="stat-label">{{ stat.label }}</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Education -->
+      <div class="about-education fade-up" style="animation-delay: 0.3s">
+        <h3 class="side-title">Academic Journey</h3>
+        <div class="timeline">
+          <div
+            *ngFor="let item of education"
+            class="timeline-item"
+            [class.highlight]="item.highlight"
+          >
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <span class="timeline-year">{{ item.year }}</span>
+              <h4 class="timeline-degree">{{ item.degree }}</h4>
+              <p class="timeline-inst">{{ item.institution }}</p>
+              <div class="timeline-badge">{{ item.cgpa }}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

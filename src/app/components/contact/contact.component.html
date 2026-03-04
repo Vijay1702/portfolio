@@ -1,0 +1,118 @@
+<section id="contact" class="contact">
+  <div class="container">
+    <div class="section-header fade-up">
+      <span class="section-tag">Connect</span>
+      <h2 class="section-title">Get in <span class="gradient-text">Touch</span></h2>
+      <p class="section-subtitle">
+        Have a question or want to work together? Drop me a message below.
+      </p>
+    </div>
+
+    <div class="grid-2 contact-wrapper">
+      <!-- Left: Contact Info -->
+      <div class="contact-info fade-up" style="animation-delay: 0.1s">
+        <h3 class="side-title">Contact Information</h3>
+        <p class="contact-pitch">
+          I'm currently looking for new opportunities as a Full Stack Developer or AI/ML Engineer.
+          If you have a project in mind or just want to say hi, I'd love to hear from you.
+        </p>
+
+        <div class="contact-methods">
+          <div class="method-item">
+            <div class="method-icon"><ng-icon name="featherMail"></ng-icon></div>
+            <div class="method-text">
+              <span class="method-label">Email</span>
+              <a [href]="'mailto:' + personalInfo.email" class="method-link">{{
+                personalInfo.email
+              }}</a>
+            </div>
+          </div>
+          <div class="method-item">
+            <div class="method-icon"><ng-icon name="featherPhone"></ng-icon></div>
+            <div class="method-text">
+              <span class="method-label">Phone</span>
+              <a [href]="'tel:' + personalInfo.phone" class="method-link">{{
+                personalInfo.phone
+              }}</a>
+            </div>
+          </div>
+          <div class="method-item">
+            <div class="method-icon"><ng-icon name="featherMapPin"></ng-icon></div>
+            <div class="method-text">
+              <span class="method-label">Location</span>
+              <span class="method-link">{{ personalInfo.location }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Form -->
+      <div class="contact-form-container fade-up" style="animation-delay: 0.3s">
+        <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="contact-form">
+          <div class="form-group">
+            <label for="name">Full Name</label>
+            <input
+              type="text"
+              id="name"
+              formControlName="name"
+              placeholder="John Doe"
+              [class.error]="contactForm.get('name')?.invalid && contactForm.get('name')?.touched"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input
+              type="email"
+              id="email"
+              formControlName="email"
+              placeholder="john@example.com"
+              [class.error]="contactForm.get('email')?.invalid && contactForm.get('email')?.touched"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="subject">Subject</label>
+            <input
+              type="text"
+              id="subject"
+              formControlName="subject"
+              placeholder="Project Discussion"
+              [class.error]="
+                contactForm.get('subject')?.invalid && contactForm.get('subject')?.touched
+              "
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="message">Your Message</label>
+            <textarea
+              id="message"
+              formControlName="message"
+              rows="5"
+              placeholder="Tell me more about your project..."
+              [class.error]="
+                contactForm.get('message')?.invalid && contactForm.get('message')?.touched
+              "
+            ></textarea>
+          </div>
+
+          <button
+            type="submit"
+            class="btn btn-primary btn-send"
+            [disabled]="status === 'sending' || status === 'success'"
+          >
+            <span *ngIf="status === 'idle'">Send Message</span>
+            <span *ngIf="status === 'sending'">Sending...</span>
+            <span *ngIf="status === 'success'">Message Sent!</span>
+            <ng-icon name="featherSend" *ngIf="status === 'idle'"></ng-icon>
+          </button>
+
+          <div *ngIf="status === 'success'" class="form-status-msg success">
+            🎉 Thanks for reaching out! I'll get back to you soon.
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

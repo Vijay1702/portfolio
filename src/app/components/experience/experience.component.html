@@ -1,0 +1,41 @@
+<section id="experience" class="experience">
+  <div class="container">
+    <div class="section-header fade-up">
+      <span class="section-tag">Career</span>
+      <h2 class="section-title">Professional <span class="gradient-text">Experience</span></h2>
+      <p class="section-subtitle">
+        Real-world experience in software engineering and artificial intelligence.
+      </p>
+    </div>
+
+    <div class="experience-list">
+      <div
+        *ngFor="let exp of experiences; let i = index"
+        class="exp-card fade-up"
+        [style.animation-delay]="i * 0.15 + 's'"
+        [class.current]="exp.isCurrent"
+      >
+        <div class="exp-header">
+          <div class="exp-title-group">
+            <h3 class="exp-role">{{ exp.title }}</h3>
+            <p class="exp-company">
+              {{ exp.company }} <span class="exp-type">· {{ exp.type }}</span>
+            </p>
+          </div>
+          <div class="exp-meta">
+            <span class="exp-period">{{ exp.period }}</span>
+            <span class="exp-location">{{ exp.location }}</span>
+          </div>
+        </div>
+
+        <ul class="exp-desc">
+          <li *ngFor="let bullet of exp.description">{{ bullet }}</li>
+        </ul>
+
+        <div class="exp-tech">
+          <span *ngFor="let t of exp.tech" class="skill-pill">{{ t }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

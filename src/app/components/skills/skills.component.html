@@ -1,0 +1,25 @@
+<section id="skills" class="skills">
+  <div class="container">
+    <div class="section-header fade-up">
+      <span class="section-tag">Expertise</span>
+      <h2 class="section-title">Technical <span class="gradient-text">Skills</span></h2>
+      <p class="section-subtitle">
+        A curated list of technologies I work with to build end-to-end solutions.
+      </p>
+    </div>
+
+    <div class="grid-3 skills-grid">
+      <div
+        *ngFor="let group of skills; let i = index"
+        class="skill-card card fade-up"
+        [style.animation-delay]="i * 0.1 + 's'"
+      >
+        <div class="skill-icon">{{ group.icon }}</div>
+        <h3 class="skill-cat">{{ group.category }}</h3>
+        <div class="skill-items">
+          <span *ngFor="let item of group.items" class="skill-pill">{{ item }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

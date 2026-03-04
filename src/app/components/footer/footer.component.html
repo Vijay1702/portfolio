@@ -1,0 +1,25 @@
+<footer class="footer">
+  <div class="container footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="#" class="footer-logo"><span class="logo-accent">VR</span>.portfolio</a>
+        <p class="footer-tagline">Software Engineer & AI/ML Developer</p>
+      </div>
+
+      <div class="footer-links">
+        <a *ngFor="let link of navLinks" [href]="link.href" class="footer-link">{{ link.label }}</a>
+      </div>
+
+      <div class="footer-socials">
+        <a [href]="personalInfo.linkedin" target="_blank" class="social-icon" aria-label="LinkedIn">
+          <ng-icon name="featherLinkedin"></ng-icon>
+        </a>
+        <a [href]="'mailto:' + personalInfo.email" class="social-icon" aria-label="Email">
+          <ng-icon name="featherMail"></ng-icon>
+        </a>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+  </div>
+</footer>

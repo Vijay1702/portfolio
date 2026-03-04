@@ -1,0 +1,79 @@
+<section id="projects" class="projects">
+  <div class="container">
+    <div class="section-header fade-up">
+      <span class="section-tag">What I've Built</span>
+      <h2 class="section-title">Featured <span class="gradient-text">Projects</span></h2>
+      <p class="section-subtitle">
+        10 projects spanning full-stack web development, AI/ML, and IoT engineering.
+      </p>
+    </div>
+
+    <!-- Filter tabs -->
+    <div class="project-filters fade-up" style="animation-delay: 0.15s">
+      <button
+        *ngFor="let f of filters"
+        class="filter-btn"
+        [class.active]="activeFilter() === f.key"
+        (click)="setFilter(f.key)"
+      >
+        {{ f.label }}
+        <span *ngIf="f.key !== 'all'" class="filter-count">{{ getFilterCount(f.key) }}</span>
+      </button>
+    </div>
+
+    <!-- Project grid -->
+    <div class="projects-grid">
+      <div
+        *ngFor="let proj of filteredProjects(); let i = index"
+        class="proj-card card fade-up"
+        [class.highlighted]="proj.highlight"
+        [style.animation-delay]="i * 0.05 + 's'"
+      >
+        <div *ngIf="proj.highlight" class="proj-highlight-bar"></div>
+
+        <div class="proj-header">
+          <div class="proj-emoji">{{ proj.emoji }}</div>
+          <div class="proj-cat">
+            <span
+              class="tag"
+              [ngClass]="{
+                teal: proj.category === 'ai',
+                purple: proj.category === 'iot',
+              }"
+            >
+              {{ proj.categoryLabel }}
+            </span>
+            <span *ngIf="proj.highlight" class="featured-badge">⭐ Featured</span>
+          </div>
+        </div>
+
+        <h3 class="proj-title">{{ proj.title }}</h3>
+        <p class="proj-desc">{{ proj.description }}</p>
+
+        <ul class="proj-bullets">
+          <li *ngFor="let b of proj.bullets">{{ b }}</li>
+        </ul>
+
+        <div class="proj-footer">
+          <div class="proj-tech">
+            <span *ngFor="let t of proj.tech.slice(0, 4)" class="skill-pill">{{ t }}</span>
+            <span *ngIf="proj.tech.length > 4" class="skill-pill">+{{ proj.tech.length - 4 }}</span>
+          </div>
+
+          <div class="proj-links">
+            <a
+              *ngIf="proj.demo"
+              [href]="proj.demo"
+              target="_blank"
+              rel="noreferrer"
+              class="proj-link"
+              aria-label="Live Demo"
+            >
+              <ng-icon name="featherExternalLink"></ng-icon>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
