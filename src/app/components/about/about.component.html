@@ -3,24 +3,25 @@
     <div class="grid-2 about-wrapper">
       <!-- Left: Photo/Bio -->
       <div class="about-content fade-up" style="animation-delay: 0.1s">
-        <span class="section-tag">About Me</span>
+        <span class="section-tag">{{ 'ABOUT.TAG' | translate }}</span>
         <h2 class="section-title">
-          Bridging the gap between <span class="gradient-text">Hardware & Software</span>
+          {{ 'ABOUT.TITLE_PRE' | translate }}
+          <span class="gradient-text">{{ 'ABOUT.TITLE_ACCENT' | translate }}</span>
         </h2>
 
-        <p class="about-bio" [innerHTML]="personalInfo.bio"></p>
+        <p class="about-bio" [innerHTML]="'ABOUT.BIO' | translate"></p>
 
         <div class="stats-grid">
           <div *ngFor="let stat of personalInfo.stats" class="stat-card">
             <span class="stat-value">{{ stat.value }}</span>
-            <span class="stat-label">{{ stat.label }}</span>
+            <span class="stat-label">{{ stat.label | translate }}</span>
           </div>
         </div>
       </div>
 
       <!-- Right: Education -->
       <div class="about-education fade-up" style="animation-delay: 0.3s">
-        <h3 class="side-title">Academic Journey</h3>
+        <h3 class="side-title">{{ 'ABOUT.SIDE_TITLE' | translate }}</h3>
         <div class="timeline">
           <div
             *ngFor="let item of education"
@@ -30,8 +31,8 @@
             <div class="timeline-dot"></div>
             <div class="timeline-content">
               <span class="timeline-year">{{ item.year }}</span>
-              <h4 class="timeline-degree">{{ item.degree }}</h4>
-              <p class="timeline-inst">{{ item.institution }}</p>
+              <h4 class="timeline-degree">{{ item.degree | translate }}</h4>
+              <p class="timeline-inst">{{ item.institution | translate }}</p>
               <div class="timeline-badge">{{ item.cgpa }}</div>
             </div>
           </div>

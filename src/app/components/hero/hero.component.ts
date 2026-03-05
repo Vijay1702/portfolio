@@ -8,11 +8,13 @@ import {
   featherMail,
 } from '@ng-icons/feather-icons';
 import { personalInfo } from '../../data/portfolio-data';
+import { MagneticDirective } from '../../directives/magnetic.directive';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-hero',
   standalone: true,
-  imports: [CommonModule, NgIconComponent],
+  imports: [CommonModule, NgIconComponent, MagneticDirective, TranslateModule],
   templateUrl: './hero.component.html',
   styleUrl: './hero.component.css',
   providers: [provideIcons({ featherArrowDown, featherGithub, featherLinkedin, featherMail })],

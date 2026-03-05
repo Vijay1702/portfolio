@@ -4,7 +4,7 @@
     <div class="chat-header">
       <div class="header-info">
         <span class="status-dot"></span>
-        <h3>AI Portfolio Assistant</h3>
+        <h3>{{ 'AI_ASSISTANT.HEADER' | translate }}</h3>
       </div>
       <button class="close-btn" (click)="toggleChat()">×</button>
     </div>
@@ -22,7 +22,7 @@
         type="text"
         [(ngModel)]="userInput"
         (keyup.enter)="sendMessage()"
-        placeholder="Ask me anything about Vijay..."
+        [placeholder]="'AI_ASSISTANT.PLACEHOLDER' | translate"
       />
       <button (click)="sendMessage()" class="send-btn">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">

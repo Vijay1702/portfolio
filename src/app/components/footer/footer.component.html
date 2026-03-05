@@ -3,11 +3,13 @@
     <div class="footer-top">
       <div class="footer-brand">
         <a href="#" class="footer-logo"><span class="logo-accent">VR</span>.portfolio</a>
-        <p class="footer-tagline">Software Engineer & AI/ML Developer</p>
+        <p class="footer-tagline">{{ 'FOOTER.TAGLINE' | translate }}</p>
       </div>
 
       <div class="footer-links">
-        <a *ngFor="let link of navLinks" [href]="link.href" class="footer-link">{{ link.label }}</a>
+        <a *ngFor="let link of navLinks" [href]="link.href" class="footer-link">{{
+          link.label | translate
+        }}</a>
       </div>
 
       <div class="footer-socials">

@@ -17,50 +17,64 @@
     <!-- Badge -->
     <div class="hero-badge fade-up" style="animation-delay: 0.15s">
       <span class="badge-dot"></span>
-      {{ personalInfo.available ? 'Open to Opportunities' : 'Currently Unavailable' }}
+      {{ (personalInfo.available ? 'HERO.AVAILABLE' : 'HERO.UNAVAILABLE') | translate }}
     </div>
 
     <!-- Headline -->
     <h1 class="hero-title fade-up" style="animation-delay: 0.3s">
-      Hi, I'm <span class="gradient-text">{{ personalInfo.name }}</span>
+      {{ 'HERO.HI' | translate }}
+      <span class="gradient-text">{{ personalInfo.name | translate }}</span>
       <br />
-      <span class="hero-role">{{ personalInfo.tagline }}</span>
-      <span class="hero-role-sep"> & </span>
-      <span class="hero-role accent-teal">{{ personalInfo.subTagline }}</span>
+      <span class="hero-role">{{ personalInfo.tagline | translate }}</span>
+      <span class="hero-role-sep"> {{ 'HERO.ROLE_SEP' | translate }} </span>
+      <span class="hero-role accent-teal">{{ personalInfo.subTagline | translate }}</span>
     </h1>
 
     <!-- Subheadline -->
     <p class="hero-subtitle fade-up" style="animation-delay: 0.45s">
-      {{ personalInfo.headline }}
+      {{ personalInfo.headline | translate }}
     </p>
 
     <!-- Meta tags -->
     <div class="hero-tags fade-up" style="animation-delay: 0.6s">
-      <span class="tag teal">MTech IT @ CEG Chennai</span>
-      <span class="tag">MERN Stack</span>
-      <span class="tag">AI / ML</span>
-      <span class="tag purple">Hackathon Finalist</span>
+      <span class="tag teal">{{ 'HERO.TAGS.MTECH' | translate }}</span>
+      <span class="tag">{{ 'HERO.TAGS.MERN' | translate }}</span>
+      <span class="tag">{{ 'HERO.TAGS.AI_ML' | translate }}</span>
+      <span class="tag purple">{{ 'HERO.TAGS.HACKATHON' | translate }}</span>
     </div>
 
     <!-- CTAs -->
     <div class="hero-cta fade-up" style="animation-delay: 0.75s">
-      <a href="#projects" class="btn btn-primary">
-        View My Work <span style="margin-left: 4px">↓</span>
+      <a href="#projects" class="btn btn-primary" appMagnetic>
+        {{ 'HERO.VIEW_WORK' | translate }} <span style="margin-left: 4px">↓</span>
       </a>
-      <a href="#contact" class="btn btn-outline"> Let's Connect </a>
-      <a [href]="personalInfo.resumeLink" class="btn btn-ghost" download="Vijay_Ramesh_Resume.pdf">
-        Download CV
+      <a href="#contact" class="btn btn-outline" appMagnetic>
+        {{ 'HERO.LET_CONNECT' | translate }}
+      </a>
+      <a
+        [href]="personalInfo.resumeLink"
+        class="btn btn-ghost"
+        download="Vijay_Ramesh_Resume.pdf"
+        appMagnetic
+      >
+        {{ 'HERO.DOWNLOAD_CV' | translate }}
       </a>
     </div>
 
     <!-- Social strip -->
     <div class="hero-social fade-up" style="animation-delay: 0.9s">
-      <a [href]="personalInfo.linkedin" target="_blank" rel="noreferrer" class="social-link">
-        <ng-icon name="featherLinkedin"></ng-icon> LinkedIn
+      <a
+        [href]="personalInfo.linkedin"
+        target="_blank"
+        rel="noreferrer"
+        class="social-link"
+        appMagnetic
+      >
+        <ng-icon name="featherLinkedin"></ng-icon> {{ 'COMMON.LINKEDIN' | translate }}
       </a>
       <span class="social-sep">·</span>
-      <a [href]="'mailto:' + personalInfo.email" class="social-link">
-        <ng-icon name="featherMail"></ng-icon> Email
+      <a [href]="'mailto:' + personalInfo.email" class="social-link" appMagnetic>
+        <ng-icon name="featherMail"></ng-icon> {{ 'COMMON.EMAIL' | translate }}
       </a>
     </div>
 

@@ -1,20 +1,25 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-ai-assistant',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, TranslateModule],
   templateUrl: './ai-assistant.component.html',
   styleUrl: './ai-assistant.component.css',
 })
 export class AiAssistantComponent {
   isOpen = false;
   userInput = '';
-  messages: { role: 'user' | 'assistant'; content: string }[] = [
-    { role: 'assistant', content: "Hello! I am Vijay's AI assistant. How can I help you today?" },
-  ];
+  messages: { role: 'user' | 'assistant'; content: string }[] = [];
+
+  constructor(private readonly translate: TranslateService) {
+    this.translate.get('AI_ASSISTANT.WELCOME').subscribe((res) => {
+      this.messages.push({ role: 'assistant', content: res });
+    });
+  }
 
   toggleChat() {
     this.isOpen = !this.isOpen;
@@ -29,18 +34,17 @@ export class AiAssistantComponent {
 
     // Simulated basic logic
     setTimeout(() => {
-      let response =
-        "That's a great question! Vijay is an expert in Web Engineering and AI. You can find more details in the Projects and Experience sections.";
+      let key = 'AI_ASSISTANT.FALLBACK';
 
       if (input.includes('contact')) {
-        response =
-          'You can reach Vijay via the Contact section at the bottom of the page, or through his LinkedIn profile.';
+        key = 'AI_ASSISTANT.CONTACT_RES';
       } else if (input.includes('skill') || input.includes('tech')) {
-        response =
-          'Vijay specializes in Angular, React, Node.js, and Deep Learning. Check out the Skills section for a full list!';
+        key = 'AI_ASSISTANT.SKILLS_RES';
       }
 
-      this.messages.push({ role: 'assistant', content: response });
+      this.translate.get(key).subscribe((res) => {
+        this.messages.push({ role: 'assistant', content: res });
+      });
     }, 1000);
   }
 }

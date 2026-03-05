@@ -1,27 +1,41 @@
 <nav class="navbar" [class.scrolled]="isScrolled()">
   <div class="container nav-inner">
-    <a href="#" class="nav-logo" (click)="closeMenu()">
+    <a href="#" class="nav-logo" (click)="closeMenu()" appMagnetic>
       <span class="logo-accent">VR</span>.portfolio
     </a>
 
     <!-- Desktop Menu -->
     <div class="nav-menu desktop-only">
-      <a *ngFor="let link of navLinks" [href]="link.href" class="nav-link" (click)="closeMenu()">
-        {{ link.label }}
+      <a
+        *ngFor="let link of navLinks"
+        [href]="link.href"
+        class="nav-link"
+        (click)="closeMenu()"
+        appMagnetic
+      >
+        {{ link.label | translate }}
       </a>
     </div>
 
     <!-- Desktop Actions -->
     <div class="nav-actions desktop-only">
-      <a [href]="personalInfo.linkedin" target="_blank" class="social-btn" aria-label="LinkedIn">
+      <app-language-switcher></app-language-switcher>
+      <a
+        [href]="personalInfo.linkedin"
+        target="_blank"
+        class="social-btn"
+        aria-label="LinkedIn"
+        appMagnetic
+      >
         <ng-icon name="featherLinkedin"></ng-icon>
       </a>
       <a
         [href]="personalInfo.resumeLink"
         download="Vijay_Ramesh_Resume.pdf"
         class="btn btn-primary btn-sm"
+        appMagnetic
       >
-        <span>Resume</span>
+        <span>{{ 'NAV.RESUME' | translate }}</span>
         <ng-icon name="featherDownload"></ng-icon>
       </a>
     </div>
@@ -30,7 +44,7 @@
     <button
       class="menu-toggle mobile-only"
       (click)="toggleMenu()"
-      [attr.aria-label]="isMenuOpen() ? 'Close menu' : 'Open menu'"
+      [attr.aria-label]="(isMenuOpen() ? 'NAV.CLOSE_MENU' : 'NAV.OPEN_MENU') | translate"
     >
       <ng-icon [name]="isMenuOpen() ? 'featherX' : 'featherMenu'"></ng-icon>
     </button>
@@ -45,15 +59,21 @@
         class="mobile-nav-link"
         (click)="closeMenu()"
       >
-        {{ link.label }}
+        {{ link.label | translate }}
       </a>
+      <div
+        class="mobile-lang-wrap"
+        style="padding: 1rem 0; border-top: 1px solid rgba(255, 255, 255, 0.05); margin-top: 1rem"
+      >
+        <app-language-switcher></app-language-switcher>
+      </div>
       <div class="mobile-actions">
         <a
           [href]="personalInfo.resumeLink"
           download="Vijay_Ramesh_Resume.pdf"
           class="btn btn-primary w-full"
         >
-          Download Resume
+          {{ 'NAV.DOWNLOAD_RESUME' | translate }}
         </a>
       </div>
     </div>

@@ -1,8 +1,11 @@
 <section id="experience" class="experience">
   <div class="container">
     <div class="section-header fade-up">
-      <span class="section-tag">Career</span>
-      <h2 class="section-title">Professional <span class="gradient-text">Experience</span></h2>
+      <span class="section-tag">{{ 'EXPERIENCE.TAG' | translate }}</span>
+      <h2 class="section-title">
+        {{ 'EXPERIENCE.TITLE' | translate | slice: 0 : 12 }}
+        <span class="gradient-text">{{ 'EXPERIENCE.TITLE' | translate | slice: 13 }}</span>
+      </h2>
       <p class="section-subtitle">
         Real-world experience in software engineering and artificial intelligence.
       </p>
@@ -17,19 +20,20 @@
       >
         <div class="exp-header">
           <div class="exp-title-group">
-            <h3 class="exp-role">{{ exp.title }}</h3>
+            <h3 class="exp-role">{{ exp.title | translate }}</h3>
             <p class="exp-company">
-              {{ exp.company }} <span class="exp-type">· {{ exp.type }}</span>
+              {{ exp.company | translate }}
+              <span class="exp-type">· {{ exp.type | translate }}</span>
             </p>
           </div>
           <div class="exp-meta">
             <span class="exp-period">{{ exp.period }}</span>
-            <span class="exp-location">{{ exp.location }}</span>
+            <span class="exp-location">{{ exp.location | translate }}</span>
           </div>
         </div>
 
         <ul class="exp-desc">
-          <li *ngFor="let bullet of exp.description">{{ bullet }}</li>
+          <li *ngFor="let bullet of exp.description">{{ bullet | translate }}</li>
         </ul>
 
         <div class="exp-tech">

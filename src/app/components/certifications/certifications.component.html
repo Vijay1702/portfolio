@@ -1,11 +1,12 @@
 <section id="certifications" class="certifications">
   <div class="container">
     <div class="section-header fade-up">
-      <span class="section-tag">Recognition</span>
+      <span class="section-tag">{{ 'CERTS.TAG' | translate }}</span>
       <h2 class="section-title">
-        Certifications & <span class="gradient-text">Achievements</span>
+        {{ 'CERTS.TITLE' | translate | slice: 0 : 16 }}
+        <span class="gradient-text">{{ 'CERTS.TITLE' | translate | slice: 17 }}</span>
       </h2>
-      <p class="section-subtitle">Verified achievements and professional certifications.</p>
+      <p class="section-subtitle">{{ 'CERTS.SUBTITLE' | translate }}</p>
     </div>
 
     <div class="grid-3 certs-grid">
@@ -17,9 +18,9 @@
       >
         <div class="cert-icon">{{ cert.icon }}</div>
         <div class="cert-content">
-          <h3 class="cert-title">{{ cert.title }}</h3>
-          <p class="cert-issuer">{{ cert.issuer }}</p>
-          <p class="cert-desc">{{ cert.description }}</p>
+          <h3 class="cert-title">{{ cert.title | translate }}</h3>
+          <p class="cert-issuer">{{ cert.issuer | translate }}</p>
+          <p class="cert-desc">{{ cert.description | translate }}</p>
         </div>
       </div>
     </div>

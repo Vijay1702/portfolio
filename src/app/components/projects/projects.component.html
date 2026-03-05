@@ -1,10 +1,13 @@
 <section id="projects" class="projects">
   <div class="container">
     <div class="section-header fade-up">
-      <span class="section-tag">What I've Built</span>
-      <h2 class="section-title">Featured <span class="gradient-text">Projects</span></h2>
+      <span class="section-tag">{{ 'PROJECTS.TAG' | translate }}</span>
+      <h2 class="section-title">
+        {{ 'PROJECTS.TITLE_PRE' | translate }}
+        <span class="gradient-text">{{ 'PROJECTS.TITLE_ACCENT' | translate }}</span>
+      </h2>
       <p class="section-subtitle">
-        8 projects spanning full-stack web development and AI/ML engineering.
+        {{ 'PROJECTS.SUBTITLE' | translate }}
       </p>
     </div>
 
@@ -16,7 +19,7 @@
         [class.active]="activeFilter() === f.key"
         (click)="setFilter(f.key)"
       >
-        {{ f.label }}
+        {{ f.label | translate }}
         <span *ngIf="f.key !== 'all'" class="filter-count">{{ getFilterCount(f.key) }}</span>
       </button>
     </div>
@@ -42,17 +45,19 @@
                 purple: proj.categories.includes('iot'),
               }"
             >
-              {{ proj.categoryLabel }}
+              {{ proj.categoryLabel | translate }}
             </span>
-            <span *ngIf="proj.highlight" class="featured-badge">⭐ Featured</span>
+            <span *ngIf="proj.highlight" class="featured-badge"
+              >⭐ {{ 'PROJECTS.FEATURED' | translate }}</span
+            >
           </div>
         </div>
 
-        <h3 class="proj-title">{{ proj.title }}</h3>
-        <p class="proj-desc">{{ proj.description }}</p>
+        <h3 class="proj-title">{{ proj.title | translate }}</h3>
+        <p class="proj-desc">{{ proj.description | translate }}</p>
 
         <ul class="proj-bullets">
-          <li *ngFor="let b of proj.bullets">{{ b }}</li>
+          <li *ngFor="let b of proj.bullets">{{ b | translate }}</li>
         </ul>
 
         <div class="proj-footer">
@@ -96,7 +101,7 @@
               class="btn btn-primary"
               appMagnetic
             >
-              <ng-icon name="featherGithub"></ng-icon> GitHub Code
+              <ng-icon name="featherGithub"></ng-icon> {{ 'PROJECTS.GITHUB' | translate }}
             </a>
             <a
               *ngIf="project.demo"
@@ -105,34 +110,34 @@
               class="btn btn-outline"
               appMagnetic
             >
-              <ng-icon name="featherExternalLink"></ng-icon> Live Demo
+              <ng-icon name="featherExternalLink"></ng-icon> {{ 'PROJECTS.DEMO' | translate }}
             </a>
           </div>
         </div>
 
         <div class="modal-details">
           <div class="modal-header">
-            <span class="tag">{{ project.categoryLabel }}</span>
-            <h2 class="modal-title font-heading">{{ project.title }}</h2>
+            <span class="tag">{{ project.categoryLabel | translate }}</span>
+            <h2 class="modal-title font-heading">{{ project.title | translate }}</h2>
           </div>
 
           <div class="modal-section">
-            <h4 class="section-label">Overview</h4>
-            <p class="section-text">{{ project.description }}</p>
+            <h4 class="section-label">{{ 'PROJECTS.OVERVIEW' | translate }}</h4>
+            <p class="section-text">{{ project.description | translate }}</p>
           </div>
 
           <div class="modal-section">
-            <h4 class="section-label">Key Features & Technical Implementation</h4>
+            <h4 class="section-label">{{ 'PROJECTS.IMPLEMENTATION' | translate }}</h4>
             <ul class="modal-bullets-list">
               <li *ngFor="let bullet of project.bullets">
                 <ng-icon name="featherArrowRight" class="bullet-icon"></ng-icon>
-                {{ bullet }}
+                {{ bullet | translate }}
               </li>
             </ul>
           </div>
 
           <div class="modal-section">
-            <h4 class="section-label">Technologies Used</h4>
+            <h4 class="section-label">{{ 'PROJECTS.TECH_USED' | translate }}</h4>
             <div class="modal-tech-grid">
               <span *ngFor="let t of project.tech" class="tech-pill">{{ t }}</span>
             </div>

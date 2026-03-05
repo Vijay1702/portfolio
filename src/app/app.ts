@@ -10,8 +10,8 @@ import { ProjectsComponent } from './components/projects/projects.component';
 import { CertificationsComponent } from './components/certifications/certifications.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { MagneticDirective } from './directives/magnetic.directive';
 import { AiAssistantComponent } from './components/ai-assistant/ai-assistant.component';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-root',
@@ -29,9 +29,13 @@ import { AiAssistantComponent } from './components/ai-assistant/ai-assistant.com
     ContactComponent,
     FooterComponent,
     AiAssistantComponent,
-    MagneticDirective,
+    TranslateModule,
   ],
   templateUrl: './app.html',
   styleUrl: './app.css',
 })
-export class App {}
+export class App {
+  constructor(private readonly translate: TranslateService) {
+    this.translate.use('en');
+  }
+}

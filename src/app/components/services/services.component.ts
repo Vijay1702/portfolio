@@ -2,20 +2,23 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { services } from '../../data/portfolio-data';
 import { MagneticDirective } from '../../directives/magnetic.directive';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-services',
   standalone: true,
-  imports: [CommonModule, MagneticDirective],
+  imports: [CommonModule, MagneticDirective, TranslateModule],
   template: `
     <section id="expertise" class="services">
       <div class="container">
         <div class="section-header fade-up">
-          <span class="section-tag">What I Offer</span>
-          <h2 class="section-title">My <span class="gradient-text">Expertise</span></h2>
+          <span class="section-tag">{{ 'SERVICES.TAG' | translate }}</span>
+          <h2 class="section-title">
+            {{ 'SERVICES.TITLE_PRE' | translate }}
+            <span class="gradient-text">{{ 'SERVICES.TITLE_ACCENT' | translate }}</span>
+          </h2>
           <p class="section-subtitle">
-            Specialized in bridging the gap between sophisticated web engineering and intelligent AI
-            systems.
+            {{ 'SERVICES.SUBTITLE' | translate }}
           </p>
         </div>
 
@@ -29,8 +32,8 @@ import { MagneticDirective } from '../../directives/magnetic.directive';
             <div class="service-icon-wrapper">
               <span class="service-icon">{{ service.icon }}</span>
             </div>
-            <h3 class="service-title">{{ service.title }}</h3>
-            <p class="service-desc">{{ service.description }}</p>
+            <h3 class="service-title">{{ service.title | translate }}</h3>
+            <p class="service-desc">{{ service.description | translate }}</p>
             <div class="service-tech">
               <span *ngFor="let t of service.tech" class="tech-pill">{{ t }}</span>
             </div>

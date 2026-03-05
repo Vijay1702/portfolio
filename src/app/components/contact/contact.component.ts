@@ -4,11 +4,12 @@ import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angula
 import { NgIconComponent, provideIcons } from '@ng-icons/core';
 import { featherMail, featherPhone, featherMapPin, featherSend } from '@ng-icons/feather-icons';
 import { personalInfo } from '../../data/portfolio-data';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, NgIconComponent],
+  imports: [CommonModule, ReactiveFormsModule, NgIconComponent, TranslateModule],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.css',
   providers: [provideIcons({ featherMail, featherPhone, featherMapPin, featherSend })],

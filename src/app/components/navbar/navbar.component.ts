@@ -9,11 +9,20 @@ import {
   featherDownload,
 } from '@ng-icons/feather-icons';
 import { navLinks, personalInfo } from '../../data/portfolio-data';
+import { MagneticDirective } from '../../directives/magnetic.directive';
+import { TranslateModule } from '@ngx-translate/core';
+import { LanguageSwitcherComponent } from '../language-switcher/language-switcher.component';
 
 @Component({
   selector: 'app-navbar',
   standalone: true,
-  imports: [CommonModule, NgIconComponent],
+  imports: [
+    CommonModule,
+    NgIconComponent,
+    MagneticDirective,
+    TranslateModule,
+    LanguageSwitcherComponent,
+  ],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.css',
   providers: [

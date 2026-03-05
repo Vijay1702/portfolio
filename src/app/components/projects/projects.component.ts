@@ -9,17 +9,18 @@ import {
 } from '@ng-icons/feather-icons';
 import { projects } from '../../data/portfolio-data';
 import { Project } from '../../models/portfolio.model';
+import { TranslateModule } from '@ngx-translate/core';
 
 const FILTERS = [
-  { key: 'all', label: 'All Projects' },
-  { key: 'web', label: '🌐 Web Dev' },
-  { key: 'ai', label: '🤖 AI / ML' },
+  { key: 'all', label: 'PROJECTS.FILTER_ALL' },
+  { key: 'web', label: 'PROJECTS.FILTER_WEB' },
+  { key: 'ai', label: 'PROJECTS.FILTER_AI' },
 ];
 
 @Component({
   selector: 'app-projects',
   standalone: true,
-  imports: [CommonModule, NgIconComponent],
+  imports: [CommonModule, NgIconComponent, TranslateModule],
   templateUrl: './projects.component.html',
   styleUrl: './projects.component.css',
   providers: [provideIcons({ featherGithub, featherExternalLink, featherX, featherArrowRight })],
