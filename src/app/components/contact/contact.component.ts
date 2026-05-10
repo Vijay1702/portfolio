@@ -28,15 +28,32 @@ export class ContactComponent {
     });
   }
 
-  onSubmit() {
+  async onSubmit() {
     if (this.contactForm.valid) {
       this.status = 'sending';
-      // Simulate API call
-      setTimeout(() => {
-        this.status = 'success';
-        this.contactForm.reset();
+      
+      try {
+        const response = await fetch('https://formsubmit.co/ajax/rvijay1702@gmail.com', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          body: JSON.stringify(this.contactForm.value)
+        });
+
+        if (response.ok) {
+          this.status = 'success';
+          this.contactForm.reset();
+          setTimeout(() => (this.status = 'idle'), 5000);
+        } else {
+          this.status = 'error';
+          setTimeout(() => (this.status = 'idle'), 5000);
+        }
+      } catch (error) {
+        this.status = 'error';
         setTimeout(() => (this.status = 'idle'), 5000);
-      }, 1500);
+      }
     } else {
       this.contactForm.markAllAsTouched();
     }

@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TranslateService } from '@ngx-translate/core';
-import { MagneticDirective } from '../../directives/magnetic.directive';
+
 
 @Component({
   selector: 'app-language-switcher',
   standalone: true,
-  imports: [CommonModule, MagneticDirective],
+  imports: [CommonModule],
   template: `
     <!-- <div class="language-switcher">
       <button
