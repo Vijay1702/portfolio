@@ -2,7 +2,7 @@
   <div class="container">
     <div class="grid-2 about-wrapper">
       <!-- Left: Photo/Bio -->
-      <div class="about-content fade-up" style="animation-delay: 0.1s">
+      <div class="about-content" appScrollReveal [revealDelay]="100">
         <span class="section-tag">{{ 'ABOUT.TAG' | translate }}</span>
         <h2 class="section-title">
           {{ 'ABOUT.TITLE_PRE' | translate }}
@@ -20,7 +20,7 @@
       </div>
 
       <!-- Right: Education -->
-      <div class="about-education fade-up" style="animation-delay: 0.3s">
+      <div class="about-education" appScrollReveal [revealDelay]="300">
         <h3 class="side-title">{{ 'ABOUT.SIDE_TITLE' | translate }}</h3>
         <div class="timeline">
           <div

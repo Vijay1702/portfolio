@@ -1,6 +1,6 @@
 <section id="projects" class="projects">
   <div class="container">
-    <div class="section-header fade-up">
+    <div class="section-header" appScrollReveal>
       <span class="section-tag">{{ 'PROJECTS.TAG' | translate }}</span>
       <h2 class="section-title">
         {{ 'PROJECTS.TITLE_PRE' | translate }}
@@ -12,7 +12,7 @@
     </div>
 
     <!-- Filter tabs -->
-    <div class="project-filters fade-up" style="animation-delay: 0.15s">
+    <div class="project-filters" appScrollReveal [revealDelay]="150">
       <button
         *ngFor="let f of filters"
         class="filter-btn"
@@ -28,9 +28,10 @@
     <div class="projects-grid">
       <div
         *ngFor="let proj of filteredProjects(); let i = index"
-        class="proj-card card fade-up"
+        class="proj-card card"
+        appScrollReveal
+        [revealDelay]="(i % 3) * 100"
         [class.highlighted]="proj.highlight"
-        [style.animation-delay]="i * 0.05 + 's'"
         (click)="openProject(proj)"
       >
         <div *ngIf="proj.highlight" class="proj-highlight-bar"></div>

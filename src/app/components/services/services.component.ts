@@ -3,15 +3,16 @@ import { CommonModule } from '@angular/common';
 import { services } from '../../data/portfolio-data';
 import { MagneticDirective } from '../../directives/magnetic.directive';
 import { TranslateModule } from '@ngx-translate/core';
+import { ScrollRevealDirective } from '../../directives/scroll-reveal.directive';
 
 @Component({
   selector: 'app-services',
   standalone: true,
-  imports: [CommonModule, MagneticDirective, TranslateModule],
+  imports: [CommonModule, MagneticDirective, TranslateModule, ScrollRevealDirective],
   template: `
     <section id="expertise" class="services">
       <div class="container">
-        <div class="section-header fade-up">
+        <div class="section-header" appScrollReveal>
           <span class="section-tag">{{ 'SERVICES.TAG' | translate }}</span>
           <h2 class="section-title">
             {{ 'SERVICES.TITLE_PRE' | translate }}
@@ -25,8 +26,9 @@ import { TranslateModule } from '@ngx-translate/core';
         <div class="grid-3">
           <div
             *ngFor="let service of servicesList; let i = index"
-            class="service-card card fade-up"
-            [style.animation-delay]="i * 0.1 + 's'"
+            class="service-card card"
+            appScrollReveal
+            [revealDelay]="i * 100"
             appMagnetic
           >
             <div class="service-icon-wrapper">
@@ -48,7 +50,7 @@ import { TranslateModule } from '@ngx-translate/core';
         background: rgba(255, 255, 255, 0.01);
       }
       .service-card {
-        padding: 40px;
+        padding: 40px 24px;
         display: flex;
         flex-direction: column;
         gap: 20px;

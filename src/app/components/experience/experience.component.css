@@ -11,7 +11,7 @@
 }
 
 .exp-card {
-  padding: 40px;
+  padding: 40px 24px;
   background: var(--bg-surface);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);

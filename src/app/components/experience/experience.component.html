@@ -1,10 +1,10 @@
 <section id="experience" class="experience">
   <div class="container">
-    <div class="section-header fade-up">
+    <div class="section-header" appScrollReveal>
       <span class="section-tag">{{ 'EXPERIENCE.TAG' | translate }}</span>
       <h2 class="section-title">
-        {{ 'EXPERIENCE.TITLE' | translate | slice: 0 : 12 }}
-        <span class="gradient-text">{{ 'EXPERIENCE.TITLE' | translate | slice: 13 }}</span>
+        {{ 'EXPERIENCE.TITLE_PRE' | translate }}
+        <span class="gradient-text">{{ 'EXPERIENCE.TITLE_ACCENT' | translate }}</span>
       </h2>
       <p class="section-subtitle">
         Real-world experience in software engineering and artificial intelligence.
@@ -14,8 +14,9 @@
     <div class="experience-list">
       <div
         *ngFor="let exp of experiences; let i = index"
-        class="exp-card fade-up"
-        [style.animation-delay]="i * 0.15 + 's'"
+        class="exp-card"
+        appScrollReveal
+        [revealDelay]="i * 100"
         [class.current]="exp.isCurrent"
       >
         <div class="exp-header">

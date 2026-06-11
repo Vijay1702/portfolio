@@ -1,10 +1,10 @@
 <section id="contact" class="contact">
   <div class="container">
-    <div class="section-header fade-up">
+    <div class="section-header" appScrollReveal>
       <span class="section-tag">{{ 'CONTACT.TAG' | translate }}</span>
       <h2 class="section-title">
-        {{ 'CONTACT.TITLE' | translate | slice: 0 : 6 }}
-        <span class="gradient-text">{{ 'CONTACT.TITLE' | translate | slice: 7 }}</span>
+        {{ 'CONTACT.TITLE_PRE' | translate }}
+        <span class="gradient-text">{{ 'CONTACT.TITLE_ACCENT' | translate }}</span>
       </h2>
       <p class="section-subtitle">
         {{ 'CONTACT.SUBTITLE' | translate }}
@@ -13,7 +13,7 @@
 
     <div class="grid-2 contact-wrapper">
       <!-- Left: Contact Info -->
-      <div class="contact-info fade-up" style="animation-delay: 0.1s">
+      <div class="contact-info" appScrollReveal [revealDelay]="100">
         <h3 class="side-title">{{ 'CONTACT.SOCIAL_LABEL' | translate }}</h3>
         <p class="contact-pitch">
           {{ 'CONTACT.PITCH' | translate }}
@@ -49,7 +49,7 @@
       </div>
 
       <!-- Right: Form -->
-      <div class="contact-form-container fade-up" style="animation-delay: 0.3s">
+      <div class="contact-form-container" appScrollReveal [revealDelay]="300">
         <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="contact-form">
           <div class="form-group">
             <label for="name">{{ 'CONTACT.FORM.NAME' | translate }}</label>

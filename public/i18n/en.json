@@ -42,83 +42,73 @@
     "CAT_AI": "AI / ML Integration",
     "CAT_IOT": "IoT & Systems",
     "PRJ1": {
-      "TITLE": "Gym Management System",
-      "DESC": "A robust full-stack solution for streamlining gym operations and member management.",
+      "TITLE": "RHB Pay — Merchant Portal",
+      "DESC": "Three-module payment platform (Backoffice, Merchant Portal, Gateway) for RHB Bank — merchant onboarding, maker-checker transactions, dynamic forms, reusable components, and multi-regional i18n.",
       "BULLETS": [
-        "Comprehensive member registration and profile management system",
-        "Automated subscription tracking and renewal notifications",
-        "Secure administrative dashboard for revenue and attendance analytics",
-        "Mobile-responsive interface for members to track workouts"
+        "Built RHB Pay Merchant Portal (Angular 17) with standalone architecture and lazy loading",
+        "Implemented secure maker-checker transactions and workflows",
+        "Developed dynamic JSON-driven form engine and reusable component library",
+        "Added multi-regional i18n translation support for ASEAN markets"
       ]
     },
     "PRJ2": {
-      "TITLE": "Restaurant Table Booking",
-      "DESC": "A geolocation-aware platform for discovering restaurants and reserving tables in real-time.",
+      "TITLE": "HRForz — Enterprise HRMS",
+      "DESC": "Full-stack HRMS with dynamic form engine, async payroll (PF/ESIC/TDS), 40+ component design system, RSA-signed JWT, RBAC, i18n, and 85%+ automated test coverage.",
       "BULLETS": [
-        "Interactive map integration using Leaflet and OpenStreetMap",
-        "Real-time table availability and reservation engine",
-        "User reviews and rating system with image upload support",
-        "Advanced search filters for cuisine, price, and distance"
+        "Architected full-stack HRMS using Next.js 16, React 19, FastAPI, PostgreSQL, and Redis",
+        "Delivered schema-driven form engine and asynchronous payroll engine (PF/ESIC/TDS/F&F)",
+        "Implemented RSA-signed JWT authentication and fine-grained RBAC",
+        "Built 40+ component design system documented with Storybook and achieved 85%+ test coverage (Vitest, Playwright, Axe Core)"
       ]
     },
     "PRJ3": {
-      "TITLE": "Expense Tracker",
-      "DESC": "A modern financial dashboard for managing personal budgets and visualizing spending habits.",
+      "TITLE": "Ascertain File Converter",
+      "DESC": "Standalone ETL desktop app for interbank file conversion with transaction routing, SWIFT mapping, RSA licensing, and zero dependency Windows .exe deployment.",
       "BULLETS": [
-        "Dynamic categorization of expenses with real-time chart visualizations",
-        "Secure authentication and cloud synchronization for data persistence",
-        "Budget goal setting and over-expenditure alerts",
-        "Exportable financial reports in CSV and PDF formats"
+        "Engineered ETL desktop app in Python and PyQt5 for interbank file conversion",
+        "Implemented IFT/IBG/RENTAS transaction routing and SWIFT code mapping",
+        "Secured application with RSA 2048-bit licensing and dual-tier logging",
+        "Packaged as a standalone, zero-dependency Windows .exe using PyInstaller"
       ]
     },
     "PRJ4": {
-      "TITLE": "Email Spam Detection",
-      "DESC": "A high-accuracy machine learning model designed to classify and filter spam emails.",
+      "TITLE": "CIMB Pay — Digital Banking UI",
+      "DESC": "End-to-end high-fidelity UI design for CIMB Group (16+ ASEAN countries) — retail and corporate banking flows with full developer-handoff assets.",
       "BULLETS": [
-        "Native language processing using TF-IDF vectorization",
-        "Multiple classifier comparison including Naive Bayes and SVM",
-        "Over 98% accuracy on standard benchmark datasets",
-        "Real-time API endpoint for integration into email servers"
+        "Designed retail and corporate banking flows for CIMB Group across 16+ ASEAN countries",
+        "Created interactive prototypes and high-fidelity mockups in Figma",
+        "Provided complete developer-handoff assets for seamless implementation",
+        "Built company-wide component library enabling rapid, consistent design creation"
       ]
     },
     "PRJ5": {
-      "TITLE": "Apple Leaf Disease Detection",
-      "DESC": "A deep learning system for early identification of various apple leaf pathologies.",
+      "TITLE": "RinggitPay — SoftPOS Grocery App",
+      "DESC": "AI-augmented Figma design system for a SoftPOS grocery payment app; rapid ideation with Claude/Stitch, refined into a production-ready interactive prototype.",
       "BULLETS": [
-        "CNN architecture optimized for plant disease classification",
-        "Transfer learning using ResNet50 for high computational efficiency",
-        "Dataset augmentation to improve model robustness in various lightings",
-        "User-friendly interface for farmers to upload leaf photos for diagnosis"
+        "Designed SoftPOS grocery payment app using AI-assisted tools (Claude, Stitch)",
+        "Created rapid interactive prototypes for stakeholder validation",
+        "Refined concepts into a production-ready Figma design system",
+        "Contributed to frontend enhancements using React.js with reusable components"
       ]
     },
     "PRJ6": {
-      "TITLE": "Smart Irrigation System",
-      "DESC": "An automated IoT-based solution for optimized water management in agriculture.",
+      "TITLE": "Smart Parking App",
+      "DESC": "AI-assisted parking slot tracking and booking; ~40% reduction in parking search time.",
       "BULLETS": [
-        "Real-time soil moisture and environmental parameter monitoring",
-        "Automated pump control based on moisture thresholds",
-        "OLED display for local status updates and system health",
-        "Energy-efficient design suitable for solar-powered deployment"
+        "Built AI-assisted parking slot tracking and reservation system",
+        "Integrated React.js frontend with Python backend and Machine Learning",
+        "Used MongoDB for secure, low-latency database storage",
+        "Achieved ~40% reduction in parking search time for users"
       ]
     },
-    "PRJ8": {
-      "TITLE": "LoRa-Based Environmental Monitoring",
-      "DESC": "A long-range wireless sensor network for environmental data acquisition.",
+    "PRJ7": {
+      "TITLE": "IoT Greenhouse System",
+      "DESC": "Real-time soil/pH monitoring with automated irrigation; ~60% reduction in manual intervention.",
       "BULLETS": [
-        "Utilized LoRa technology for low-power, long-distance communication",
-        "Multi-node architecture for wide area coverage",
-        "Robust packet handling and error correction protocols",
-        "Low-latency data transmission and centralized logging"
-      ]
-    },
-    "PRJ11": {
-      "TITLE": "AI-Powered Portfolio",
-      "DESC": "A modern, high-performance portfolio website built with cutting-edge technologies and AI assistance.",
-      "BULLETS": [
-        "Fully internationalized with English and Japanese support",
-        "Interactive AI assistant for personalized visitor guidance",
-        "Sophisticated animations and premium design aesthetics",
-        "Optimized modular architecture for fast load times"
+        "Designed automated greenhouse irrigation system using Raspberry Pi and Python",
+        "Implemented real-time soil moisture and pH level monitoring",
+        "Created automated water pump control loops based on sensor inputs",
+        "Achieved ~60% reduction in manual intervention for plant maintenance"
       ]
     }
   },
@@ -129,7 +119,7 @@
   "PERSONAL": {
     "NAME": "Vijay Ramesh",
     "TAGLINE": "Associate Software Engineer",
-    "SUB_TAGLINE": "AI-Augmented Developer",
+    "SUB_TAGLINE": "Frontend & AI Developer",
     "HEADLINE": "Building Scalable Web Applications with Intelligent Backends",
     "LOCATION": "Chennai / Pattukkottai, Tamil Nadu, India"
   },
@@ -167,15 +157,14 @@
   "EDUCATION": {
     "MTECH": "MTech — Information Technology",
     "BE": "BE — Electronics & Communication Engineering",
-    "HSC": "HSC",
-    "SSLC": "SSLC",
-    "CEG": "College of Engineering, Guindy (CEG), Chennai",
-    "KRCE": "K. Ramakrishnan College of Engineering (Autonomous), Trichy",
-    "LAUREL": "Laurel Higher Secondary School, Pattukkottai"
+    "CEG": "College of Engineering, Guindy (CEG), Anna University, Chennai",
+    "KRCE": "K. Ramakrishnan College of Engineering (Autonomous), Trichy"
   },
   "SKILLS": {
     "TAG": "Skills",
     "TITLE": "Stack & Tools",
+    "TITLE_PRE": "Stack &",
+    "TITLE_ACCENT": "Tools",
     "SUBTITLE": "A curated list of technologies I work with to build end-to-end solutions.",
     "CAT_FRONTEND": "Frontend Development",
     "CAT_BACKEND": "Backend Development",
@@ -186,6 +175,8 @@
   "EXPERIENCE": {
     "TAG": "Experience",
     "TITLE": "Professional Journey",
+    "TITLE_PRE": "Professional",
+    "TITLE_ACCENT": "Journey",
     "TYPE_FULL": "Full-time",
     "TYPE_INTERN": "Internship",
     "FINFORZ": {
@@ -193,10 +184,13 @@
       "COMPANY": "Finforz Technologies Pvt. Ltd.",
       "LOC": "Chennai, India",
       "DESC": [
-        "Designed UI/UX prototypes in Figma based on client requirements and developed responsive user interfaces using the Angular framework",
-        "Built reusable custom components using Angular libraries and converted design prototypes into production-ready frontend code",
-        "Improving UI performance, usability, and maintainability through modular architecture and best practices",
-        "Collaborating in agile workflows to deliver production-grade features on schedule"
+        "Frontend / Full-Stack: Built RHB Pay Merchant Portal (Angular 17) with standalone architecture, lazy loading, maker-checker workflows, JSON-driven form engine, and i18n support.",
+        "Architected HRForz — a full-stack HRMS using Next.js 16, React 19, FastAPI, PostgreSQL, and Redis; delivered schema-driven form engine, async payroll, RSA-signed JWT, and 85%+ test coverage.",
+        "Built a 40+ component design system (TypeScript, SCSS Modules) with complete Storybook documentation.",
+        "Contributed to RinggitPay frontend enhancements using React.js and REST API integration.",
+        "UI/UX Design: Designed end-to-end high-fidelity Figma prototypes for CIMB Group digital banking flows.",
+        "Designed RinggitPay SoftPOS Grocery App using AI-assisted tools (Claude, Stitch) and refined into a complete Figma design system.",
+        "Built a company-wide Figma component library enabling rapid, consistent multi-screen creation."
       ]
     },
     "INTERN": {
@@ -204,51 +198,39 @@
       "COMPANY": "Finforz Technologies Pvt. Ltd.",
       "LOC": "India",
       "DESC": [
-        "Designed a multi-task deep learning model using a shared encoder architecture combining BiLSTM and CNN",
-        "Built modules for revenue prediction, payment classification, and anomaly detection in a single unified model",
-        "Applied random hyperparameter tuning strategies to optimize cross-task model performance",
-        "Gained end-to-end experience in the AI/ML development lifecycle — design, training, evaluation, and iteration"
+        "AI / ML & Python Developer: Trained a multi-task deep learning model (Bi-LSTM + CNN) for revenue prediction, payment classification, and anomaly detection on financial datasets.",
+        "Engineered Ascertain File Converter (BKR-MBSB) — an ETL desktop app (PyQt5) converting Bank Rakyat payroll files into MBSB Bank's 50-field DTB bulk payment format with IFT/IBG/RENTAS routing and SWIFT mapping.",
+        "Migrated AWS services to on-premise infrastructure using Docker, reducing cloud dependency and improving deployment control."
       ]
     }
   },
   "CERTS": {
     "TAG": "Recognition",
     "TITLE": "Certifications & Achievements",
+    "TITLE_PRE": "Certifications &",
+    "TITLE_ACCENT": "Achievements",
     "SUBTITLE": "Verified achievements and professional certifications.",
     "CERT_SIH": {
-      "TITLE": "Smart Indian Hackathon 2022 — Finalist",
+      "TITLE": "Smart India Hackathon 2022 — National Finalist",
       "ISSUER": "Government of India",
       "DESC": "Shortlisted for the national final round for the project 'Municipal Finances and Tax Management System' — selected from thousands of entries across India."
     },
     "CERT_JAVA": {
-      "TITLE": "TALENTNEXT — Java J2EE",
-      "ISSUER": "TalentNext",
+      "TITLE": "TalentNext Java J2EE Certification",
+      "ISSUER": "Wipro Technologies",
       "DESC": "Industry-aligned Java certification demonstrating backend development fundamentals with Java Enterprise Edition."
     },
     "CERT_WIPRO": {
-      "TITLE": "Digital Skill Readiness Program",
-      "ISSUER": "Wipro",
-      "DESC": "Corporate-issued digital skills certification from Wipro — one of India's leading IT companies."
-    },
-    "CERT1": {
-      "TITLE": "Angular (Basic) Certificate",
-      "ISSUER": "HackerRank",
-      "DESC": "Verified proficiency in Angular fundamentals, components, and data binding."
-    },
-    "CERT2": {
-      "TITLE": "Advanced Software Engineering Virtual Experience",
-      "ISSUER": "Walmart Global Tech",
-      "DESC": "Completed practical tasks in software architecture and system design."
-    },
-    "CERT3": {
-      "TITLE": "National Level Hackathon – Runner Up",
-      "ISSUER": "National Level Tech Fest",
-      "DESC": "Achieved 2nd place for developing an innovative technical solution under time constraints."
+      "TITLE": "Wipro Digital Skill Readiness Program",
+      "ISSUER": "Wipro Technologies",
+      "DESC": "Professional certification for Software Development Fundamentals, verifying readiness for core software engineering roles."
     }
   },
   "CONTACT": {
     "TAG": "Connect",
     "TITLE": "Get in Touch",
+    "TITLE_PRE": "Get in",
+    "TITLE_ACCENT": "Touch",
     "SUBTITLE": "Have a project in mind or just want to say hi? My inbox is always open.",
     "PITCH": "I'm currently looking for new opportunities as a Full Stack Developer or AI/ML Engineer. If you have a project in mind or just want to say hi, I'd love to hear from you.",
     "LOCATION_LABEL": "Location",

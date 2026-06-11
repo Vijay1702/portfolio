@@ -15,13 +15,13 @@
 
   <div class="container hero-inner">
     <!-- Badge -->
-    <div class="hero-badge fade-up" style="animation-delay: 0.15s">
+    <div class="hero-badge" appScrollReveal [revealDelay]="150">
       <span class="badge-dot"></span>
       {{ (personalInfo.available ? 'HERO.AVAILABLE' : 'HERO.UNAVAILABLE') | translate }}
     </div>
 
     <!-- Headline -->
-    <h1 class="hero-title fade-up" style="animation-delay: 0.3s">
+    <h1 class="hero-title" appScrollReveal [revealDelay]="300">
       {{ 'HERO.HI' | translate }}
       <span class="gradient-text">{{ personalInfo.name | translate }}</span>
       <br />
@@ -31,12 +31,12 @@
     </h1>
 
     <!-- Subheadline -->
-    <p class="hero-subtitle fade-up" style="animation-delay: 0.45s">
+    <p class="hero-subtitle" appScrollReveal [revealDelay]="450">
       {{ personalInfo.headline | translate }}
     </p>
 
     <!-- Meta tags -->
-    <div class="hero-tags fade-up" style="animation-delay: 0.6s">
+    <div class="hero-tags" appScrollReveal [revealDelay]="600">
       <span class="tag teal">{{ 'HERO.TAGS.MTECH' | translate }}</span>
       <span class="tag">{{ 'HERO.TAGS.MERN' | translate }}</span>
       <span class="tag">{{ 'HERO.TAGS.AI_ML' | translate }}</span>
@@ -44,7 +44,7 @@
     </div>
 
     <!-- CTAs -->
-    <div class="hero-cta fade-up" style="animation-delay: 0.75s">
+    <div class="hero-cta" appScrollReveal [revealDelay]="750">
       <a href="#projects" class="btn btn-primary" appMagnetic>
         {{ 'HERO.VIEW_WORK' | translate }} <span style="margin-left: 4px">↓</span>
       </a>
@@ -62,7 +62,7 @@
     </div>
 
     <!-- Social strip -->
-    <div class="hero-social fade-up" style="animation-delay: 0.9s">
+    <div class="hero-social" appScrollReveal [revealDelay]="900">
       <a
         [href]="personalInfo.linkedin"
         target="_blank"

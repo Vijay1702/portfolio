@@ -10,17 +10,18 @@ import {
 import { projects } from '../../data/portfolio-data';
 import { Project } from '../../models/portfolio.model';
 import { TranslateModule } from '@ngx-translate/core';
+import { ScrollRevealDirective } from '../../directives/scroll-reveal.directive';
 
 const FILTERS = [
-  { key: 'all', label: 'PROJECTS.FILTER_ALL' },
-  { key: 'web', label: 'PROJECTS.FILTER_WEB' },
-  { key: 'ai', label: 'PROJECTS.FILTER_AI' },
+  { key: 'all', label: 'PROJECTS.CAT_ALL' },
+  { key: 'web', label: 'PROJECTS.CAT_WEB' },
+  { key: 'ai', label: 'PROJECTS.CAT_AI' },
 ];
 
 @Component({
   selector: 'app-projects',
   standalone: true,
-  imports: [CommonModule, NgIconComponent, TranslateModule],
+  imports: [CommonModule, NgIconComponent, TranslateModule, ScrollRevealDirective],
   templateUrl: './projects.component.html',
   styleUrl: './projects.component.css',
   providers: [provideIcons({ featherGithub, featherExternalLink, featherX, featherArrowRight })],

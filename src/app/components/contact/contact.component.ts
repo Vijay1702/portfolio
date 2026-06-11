@@ -5,11 +5,12 @@ import { NgIconComponent, provideIcons } from '@ng-icons/core';
 import { featherMail, featherPhone, featherMapPin, featherSend } from '@ng-icons/feather-icons';
 import { personalInfo } from '../../data/portfolio-data';
 import { TranslateModule } from '@ngx-translate/core';
+import { ScrollRevealDirective } from '../../directives/scroll-reveal.directive';
 
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, NgIconComponent, TranslateModule],
+  imports: [CommonModule, ReactiveFormsModule, NgIconComponent, TranslateModule, ScrollRevealDirective],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.css',
   providers: [provideIcons({ featherMail, featherPhone, featherMapPin, featherSend })],

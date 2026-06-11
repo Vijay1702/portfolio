@@ -1,10 +1,10 @@
 <section id="skills" class="skills">
   <div class="container">
-    <div class="section-header fade-up">
+    <div class="section-header" appScrollReveal>
       <span class="section-tag">{{ 'SKILLS.TAG' | translate }}</span>
       <h2 class="section-title">
-        {{ 'SKILLS.TITLE' | translate | slice: 0 : 5 }}
-        <span class="gradient-text">{{ 'SKILLS.TITLE' | translate | slice: 8 }}</span>
+        {{ 'SKILLS.TITLE_PRE' | translate }}
+        <span class="gradient-text">{{ 'SKILLS.TITLE_ACCENT' | translate }}</span>
       </h2>
       <p class="section-subtitle">
         {{ 'SKILLS.SUBTITLE' | translate }}
@@ -14,8 +14,9 @@
     <div class="grid-3 skills-grid">
       <div
         *ngFor="let group of skills; let i = index"
-        class="skill-card card fade-up"
-        [style.animation-delay]="i * 0.1 + 's'"
+        class="skill-card card"
+        appScrollReveal
+        [revealDelay]="i * 100"
       >
         <div class="skill-icon">{{ group.icon }}</div>
         <h3 class="skill-cat">{{ group.category | translate }}</h3>

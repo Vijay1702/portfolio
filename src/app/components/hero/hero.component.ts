@@ -10,11 +10,12 @@ import {
 import { personalInfo } from '../../data/portfolio-data';
 import { MagneticDirective } from '../../directives/magnetic.directive';
 import { TranslateModule } from '@ngx-translate/core';
+import { ScrollRevealDirective } from '../../directives/scroll-reveal.directive';
 
 @Component({
   selector: 'app-hero',
   standalone: true,
-  imports: [CommonModule, NgIconComponent, MagneticDirective, TranslateModule],
+  imports: [CommonModule, NgIconComponent, MagneticDirective, TranslateModule, ScrollRevealDirective],
   templateUrl: './hero.component.html',
   styleUrl: './hero.component.css',
   providers: [provideIcons({ featherArrowDown, featherGithub, featherLinkedin, featherMail })],
